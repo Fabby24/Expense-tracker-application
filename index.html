@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body class="background">
+    <h1>Expense Tracker</h1>
+
+    <main>
+        <header>
+            <div>
+                <h5>Total Balance</h5>
+                <span id="balance">$0.00</span>
+            </div>
+            <div>
+                <h5>Income</h5>
+                <span id="income">$0.00</span>
+            </div>
+            <div>
+                <h5>Expense</h5>
+                <span id="expense">$0.00</span>
+            </div>
+        </header>
+
+        <section>
+            <h3>Transactions</h3>
+            <!-- Transaction List Table -->
+            <table id="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-table-body">
+                    <!-- Transaction rows will be added dynamically via JavaScript -->
+                </tbody>
+            </table>
+            <!-- Status Message -->
+            <div id="statusElement"></div>
+        </section>
+
+        <section>
+            <h3>Add Transaction</h3>
+
+            <form id="transactionForm">
+                <div>
+                    <label for="type">
+                        <input type="radio" name="transaction-type" value="expense" checked /> Expense
+                        <input type="radio" name="transaction-type" value="income" /> Income
+                    </label>
+                </div>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required />
+                </div> <br>
+                <div>
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" value="0" step="0.01" required />
+                </div> <br>
+                <div>
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required />
+                </div> <br>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
